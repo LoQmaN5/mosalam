@@ -1,7 +1,13 @@
 <template>
   <div class="header">
+    <hr />
+    <router-link to="/" active-class="">
+      <img src="../assets/images/mo1.jpg" class="logo" />
+    </router-link>
     <ul>
-      <router-link to="/" tag="li" exact> <a>Home</a> </router-link>
+      <router-link to="/" tag="li" exact>
+        <a>Home</a>
+      </router-link>
       <router-link to="/about" tag="li"> <a>About</a> </router-link>
       <router-link to="/works" tag="li"> <a>Works</a> </router-link>
       <router-link to="/articles" tag="li"> <a>Articles</a></router-link>
@@ -12,29 +18,62 @@
 
 <script>
 export default {
-  name: "AppHeader"
+  name: "AppHeader",
+  data: function() {
+    return {
+      active: false
+    };
+  }
 };
 </script>
 
 <style lang="scss" scope>
+.router-link-active {
+  color: #f00;
+  border-top: #00f 2px solid;
+}
+hr {
+  margin: 0 0 0 200px;
+}
 .header {
-  background-color: #333;
+  // background-color: #333;
   color: #fff;
   overflow: hidden;
+  margin-top: 30px;
 
   ul {
     float: left;
     width: calc(100% - 200px);
-    margin: 0;
+    margin-top: -22px;
   }
   li {
     padding: 20px;
     display: inline-block;
     font-size: 20px;
+    display: inline-block;
+    margin-top: 5px;
+    margin-right: 15px;
+  }
+  li:hover {
+    border-top: #00f 2px solid;
   }
   a {
-    color: white;
-    text-decoration: none;
+    color: #000;
   }
+  a:hover {
+    color: blue;
+    text-decoration-line: none;
+  }
+}
+.logo {
+  position: relative;
+  right: 85%;
+  width: 110px;
+  height: 110px;
+  border-radius: 80%;
+  box-shadow: 0 0px 15px 5px rgba(87, 24, 24, 0.2),
+    0 0 0 15px rgba(136, 93, 93, 0.055);
+  margin-top: -15px;
+  margin-bottom: 5%;
 }
 </style>

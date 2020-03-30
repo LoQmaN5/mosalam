@@ -4,9 +4,8 @@
 
 <script>
 export default {
-  name: 'Django'
+  name: "Django"
 };
 </script>
 
-<style>
-</style>
+<style></style>

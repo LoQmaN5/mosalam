@@ -12,7 +12,6 @@ import Python from "../views/works/Python.vue";
 import WordPress from "../views/works/WordPress.vue";
 
 Vue.use(VueRouter);
-
 const routes = [
   {
     path: "/",

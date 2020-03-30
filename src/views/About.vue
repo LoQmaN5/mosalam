@@ -17,11 +17,15 @@
       Entrepreneur he aspires. Because it is really important to know the WHAT
       and the WHY to master the HOW. It’s all about Coding with a goal in mind.
     </p>
+    <app-body />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
+
+import AppBody from "../components/AppBody";
+
 export default {
   data: function() {
     return {
@@ -29,15 +33,19 @@ export default {
       pageDesc: ""
     };
   },
-  name: "about"
+  name: "about",
+  components: {
+    AppBody
+  }
 };
 </script>
 
-
-<style>
-p {
-  text-align: justify;
-  font-weight: bold;
-  font-size: 15px;
-}
+<style lang="scss" scope>
+// p {
+//   text-align: justify;
+//   font-weight: bold;
+//   font-size: 15px;
+//   border-left: 5px solid;
+//   background-color: #f6f6f6;
+// }
 </style>

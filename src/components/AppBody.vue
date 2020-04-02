@@ -22,9 +22,6 @@ export default {
     AppWorksBody,
     AppArticles,
     AppHire
-  },
-  data: function() {
-    return {};
   }
 };
 </script>

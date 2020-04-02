@@ -1,12 +1,14 @@
 <template>
-  <div>
-    Java
-  </div>
+  <div><app-header />Java</div>
 </template>
 
 <script>
+import AppHeader from "../../components/AppHeader.vue";
 export default {
-  name: "Java"
+  name: "Java",
+  components: {
+    AppHeader
+  }
 };
 </script>
 

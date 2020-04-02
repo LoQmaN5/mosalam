@@ -1,5 +1,7 @@
 <template>
-  <div class="about">
+  <div>
+    <app-header />
+    LoQmaN About 2
     <h1>{{ pageName }}</h1>
     <p class="container">
       A serial Entrepreneur with engineering as well as business background who
@@ -17,35 +19,23 @@
       Entrepreneur he aspires. Because it is really important to know the WHAT
       and the WHY to master the HOW. It’s all about Coding with a goal in mind.
     </p>
-    <app-body />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
-import AppBody from "../components/AppBody";
-
+import AppHeader from "../components/AppHeader.vue";
 export default {
+  name: "About",
   data: function() {
     return {
       pageName: "About Me",
       pageDesc: ""
     };
   },
-  name: "about",
   components: {
-    AppBody
+    AppHeader
   }
 };
 </script>
 
-<style lang="scss" scope>
-// p {
-//   text-align: justify;
-//   font-weight: bold;
-//   font-size: 15px;
-//   border-left: 5px solid;
-//   background-color: #f6f6f6;
-// }
-</style>
+<style scope></style>

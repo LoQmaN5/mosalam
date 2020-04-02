@@ -18,7 +18,7 @@
 <script>
 export default {
   props: ["viwes", "title", "date", "content", "author", "category"],
-  name: "ArticalPost"
+  name: "ArticlePost"
 };
 </script>
 

@@ -1,10 +1,10 @@
 <template>
-  <div>AppArticles</div>
+  <div></div>
 </template>
 
 <script>
 export default {
-  name: "AppArticles"
+  name: "AppSideBar"
 };
 </script>
 

@@ -1,10 +1,14 @@
 <template>
-  <div>WordPress</div>
+  <div><app-header />WordPress</div>
 </template>
 
 <script>
+import AppHeader from "../../components/AppHeader.vue";
 export default {
-  name: "WordPress"
+  name: "WordPress",
+  components: {
+    AppHeader
+  }
 };
 </script>
 

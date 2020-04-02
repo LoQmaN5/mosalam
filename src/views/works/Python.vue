@@ -1,10 +1,14 @@
 <template>
-  <div>Python</div>
+  <div><app-header />Python</div>
 </template>
 
 <script>
+import AppHeader from "../../components/AppHeader.vue";
 export default {
-  name: "Python"
+  name: "Python",
+  components: {
+    AppHeader
+  }
 };
 </script>
 

@@ -1,19 +1,18 @@
 <template>
   <div id="app">
-    <app-header />
-    <!-- <app-body /> -->
+    <!-- <app-header /> -->
+    <!-- <app-side-bar /> -->
     <router-view />
   </div>
 </template>
 
 <script>
-import AppHeader from "../src/components/AppHeader.vue";
-// import AppBody from "../src/components/AppBody";
+// import AppHeader from "../src/components/AppHeader.vue";
+// import AppSideBar from "../src/components/AppSideBar.vue";
 export default {
   name: "App",
   components: {
-    AppHeader,
-    // AppBody
+    // AppHeader
   }
 };
 </script>

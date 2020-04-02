@@ -1,5 +1,7 @@
 <template>
-  <div class="container">
+  <div>
+    <app-header />
+
     <h1>Hire me</h1>
     <div v-b-hover="handleHover" class="border rounded py-3 px-4">
       <b-icon v-if="isHovered" icon="bar-chart-fill" scale="2"></b-icon>
@@ -8,10 +10,12 @@
         >Hover this area</span
       >
     </div>
+    <div>LoQmaN Hire Me 5</div>
   </div>
 </template>
 
 <script>
+import AppHeader from "../components/AppHeader.vue";
 export default {
   name: "HireMe",
   data() {
@@ -24,13 +28,10 @@ export default {
       this.isHovered = hovered;
     }
   },
-  components: {}
+  components: {
+    AppHeader
+  }
 };
 </script>
 
-<style>
-.border {
-  text-align: left;
-  /* width: 25%; */
-}
-</style>
+<style scope></style>

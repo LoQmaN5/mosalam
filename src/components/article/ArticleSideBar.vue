@@ -1,10 +1,10 @@
 <template>
-  <div>AppAbout</div>
+  <div class="sidebar-widgets">ArticleSideBar</div>
 </template>
 
 <script>
 export default {
-  name: "AppAbout"
+  name: "ArticleSideBar"
 };
 </script>
 

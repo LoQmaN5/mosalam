@@ -1,28 +1,42 @@
 <template>
-  <div class="header">
-    <hr />
-    <router-link to="/" active-class="">
-      <img src="../assets/images/mo1.jpg" class="logo" />
-    </router-link>
-    <ul>
-      <router-link to="/" tag="li" exact>
-        <a>Home</a>
+  <div>
+    <div class="header">
+      <hr />
+      <router-link to="/" active-class>
+        <img src="../assets/images/mo1.jpg" class="logo" />
+        <span id="name">
+          Mo
+          <strong>Salam</strong>
+        </span>
       </router-link>
-      <router-link to="/about" tag="li"> <a>About</a> </router-link>
-      <router-link to="/works" tag="li"> <a>Works</a> </router-link>
-      <router-link to="/articles" tag="li"> <a>Articles</a></router-link>
-      <router-link to="/hire-me" tag="li"><a>Hire me</a></router-link>
-    </ul>
+      <ul>
+        <router-link to="/" tag="li" exact>
+          <a>Home</a>
+        </router-link>
+        <router-link to="/about" tag="li">
+          <a>About</a>
+        </router-link>
+        <router-link to="/works" tag="li">
+          <a>Works</a>
+        </router-link>
+        <router-link to="/articles" tag="li">
+          <a>Articles</a>
+        </router-link>
+        <router-link to="/hire-me" tag="li">
+          <a>Hire me</a>
+        </router-link>
+      </ul>
+    </div>
+    <app-side-bar />
   </div>
 </template>
 
 <script>
+import AppSideBar from "../components/AppSideBar.vue";
 export default {
   name: "AppHeader",
-  data: function() {
-    return {
-      active: false
-    };
+  components: {
+    AppSideBar
   }
 };
 </script>
@@ -50,7 +64,6 @@ hr {
     padding: 20px;
     display: inline-block;
     font-size: 20px;
-    display: inline-block;
     margin-top: 5px;
     margin-right: 15px;
   }
@@ -75,5 +88,17 @@ hr {
     0 0 0 15px rgba(136, 93, 93, 0.055);
   margin-top: -15px;
   margin-bottom: 5%;
+}
+#name {
+  font-size: 22px;
+  top: 165px;
+  left: 70px;
+  transform: translateX(-65%) scale(-1);
+  writing-mode: vertical-lr;
+  padding: 8px 4px;
+  position: absolute;
+  left: 105px;
+  top: 220px;
+  background-color: #fff;
 }
 </style>

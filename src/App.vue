@@ -1,41 +1,18 @@
 <template>
   <div id="app">
-    <!-- <app-header /> -->
-    <!-- <app-side-bar /> -->
+    <!-- <hero-mo /> -->
     <router-view />
   </div>
 </template>
 
 <script>
-// import AppHeader from "../src/components/AppHeader.vue";
-// import AppSideBar from "../src/components/AppSideBar.vue";
+// import HeroMo from "./components/HeroMo.vue";
 export default {
   name: "App",
   components: {
-    // AppHeader
+    // HeroMo
   }
 };
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+<style lang="scss"></style>

@@ -6,9 +6,17 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import "bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./scss/main.scss";
+import "../src/assets/style/master.scss";
+import "../src/assets/plugin/font-awesome/css/all.min.css";
+import "../src/assets/plugin/et-line/style.css";
+import "../src/assets/plugin/themify-icons/themify-icons.css";
+import "../src/assets/plugin/magnific/magnific-popup.css";
 import "normalize.css";
+import "../src/assets/js/custom.js";
+import "../src/assets/js/mail_send.js";
+import VueTyperPlugin from "vue-typer";
+
+Vue.use(VueTyperPlugin);
 
 Vue.config.productionTip = false;
 

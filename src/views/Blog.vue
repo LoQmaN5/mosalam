@@ -1,8 +1,7 @@
 <template>
   <div>
-    <!-- <app-header /> -->
     <!-- Blog -->
-    <section id="blog" class="section white-bg">
+    <section id="blog" class="section gray-bg">
       <div class="container">
         <div class="row sm-m-25px-b m-35px-b">
           <div class="col-md-12">

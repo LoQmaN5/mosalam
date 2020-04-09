@@ -11,6 +11,7 @@ import "../src/assets/plugin/font-awesome/css/all.min.css";
 import "../src/assets/plugin/et-line/style.css";
 import "../src/assets/plugin/themify-icons/themify-icons.css";
 import "../src/assets/plugin/magnific/magnific-popup.css";
+// import "../src/assets/plugin/magnific/jquery.magnific-popup.min.js";
 import "normalize.css";
 import "../src/assets/js/custom.js";
 import "../src/assets/js/mail_send.js";

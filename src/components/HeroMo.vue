@@ -11,6 +11,7 @@
       <contact />
     </main>
     <!-- main end -->
+    <app-footer />
   </div>
 </template>
 
@@ -22,6 +23,7 @@ import Services from "../views/Services.vue";
 import Portfolio from "../views/Portfolio.vue";
 import Blog from "../views/Blog.vue";
 import Contact from "../views/Contact.vue";
+import AppFooter from "../components/AppFooter.vue";
 export default {
   name: "HeroMo",
   components: {
@@ -31,7 +33,8 @@ export default {
     Services,
     Portfolio,
     Blog,
-    Contact
+    Contact,
+    AppFooter,
   }
 };
 </script>

@@ -1,26 +1,5 @@
 <template>
   <div>
-    <!-- <app-header /> -->
-    <!-- <h1>{{ pageName }}</h1>
-    <h1>{{ pageDesc }}</h1>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <div class="artical-area">
-            <article-post
-              v-for="article in articles"
-              :key="article.id"
-              :viwes="article.viwes"
-              :title="article.title"
-              :date="article.date"
-              :content="article.content"
-              :author="article.author"
-              :category="article.category"
-            />
-          </div>
-        </div>
-      </div> -->
-    <!-- </div> -->
     <!-- resume -->
     <section id="services" class="section gray-bg">
       <div class="container">

@@ -5,7 +5,7 @@ import jQuery from "jquery";
 (function($) {
   "use strict";
   var NAY = {};
-  var plugin_track = "../plugin";
+  var plugin_track = "assets/plugin/";
   $.fn.exists = function() {
     return this.length > 0;
   };

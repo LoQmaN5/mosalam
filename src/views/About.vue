@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <app-header /> -->
     <!-- about us -->
     <section id="about" class="section gray-bg">
       <div class="container">
@@ -17,12 +16,23 @@
         <div class="row align-items-center">
           <div class="col-lg-5 m-15px-tb">
             <div class="about-me-img box-shadow">
-              <img src="../assets/img/mo1.jpg" title="" alt="" />
+              <img src="../assets/img/mo1.jpg" title alt />
               <div class="nav social-icon">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a :href="facebook" target="_blank">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a :href="twitter" target="_blank">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a :href="instagram" target="_blank">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a :href="linkedin" target="_blank">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a :href="github" target="_blank">
+                  <i class="fab fa-github"></i
+                ></a>
               </div>
             </div>
           </div>
@@ -30,8 +40,9 @@
             <div class="about-me">
               <h4>I'M Mo Salam</h4>
               <h6>
-                A Lead <span class="theme-color">UX & UI</span> designer based
-                in <span class="theme-color">Canada</span>
+                A Lead
+                <span class="theme-color">UX & UI</span> designer based in
+                <span class="theme-color">Canada</span>
               </h6>
               <p>
                 I design and develop services for customers of all sizes,
@@ -216,7 +227,6 @@
       </div>
     </section>
     <!-- End fun -->
-    <!-- <app-footer /> -->
   </div>
 </template>
 
@@ -224,6 +234,15 @@
 // import AppHeader from "../components/AppHeader.vue";
 export default {
   name: "About",
+  data: function() {
+    return {
+      facebook: "https://www.facebook.com/m7.salam1",
+      twitter: "https://twitter.com",
+      instagram: "https://www.instagram.com/m7.salam",
+      linkedin: "https://www.linkedin.com/in/m7salam",
+      github: "https://github.com/m7salam"
+    };
+  },
   components: {
     // AppHeader
   }

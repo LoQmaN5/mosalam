@@ -1,6 +1,10 @@
 <template>
   <!-- Home Banner -->
-  <section id="home" class="home-banner-01 bg-cover bg-center bg-no-repeat" :style="bgImg">
+  <section
+    id="home"
+    class="home-banner-01 bg-cover bg-center bg-no-repeat"
+    :style="bgImg"
+  >
     <div class="container">
       <div class="row full-screen align-items-center p-100px-tb">
         <div class="col-md-6">
@@ -25,9 +29,8 @@
             </h2>
 
             <p>
-              The namics of how users interact with interactive elements
-              within a user interface flow chart based on container
-              proportion.
+              The namics of how users interact with interactive elements within
+              a user interface flow chart based on container proportion.
             </p>
             <div class="btn-bar go-to">
               <a class="m-btn m-btn-theme" href="#work">my work</a>

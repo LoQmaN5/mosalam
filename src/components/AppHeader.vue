@@ -39,6 +39,12 @@
           </a>
         </li>
         <li>
+          <a class="nav-link" href="#skills">
+            <i class="fa fa-cogs"></i>
+            <span>My Skills</span>
+          </a>
+        </li>
+        <li>
           <a class="nav-link" href="#services">
             <i class="fas fa-concierge-bell"></i>
             <span>Services</span>

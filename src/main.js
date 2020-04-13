@@ -12,11 +12,14 @@ import "../src/assets/plugin/et-line/style.css";
 import "../src/assets/plugin/themify-icons/themify-icons.css";
 import "../src/assets/plugin/magnific/magnific-popup.css";
 // import "../src/assets/plugin/magnific/jquery.magnific-popup.min.js";
+import "isotope-layout/dist/isotope.pkgd";
 import "normalize.css";
 import "../src/assets/js/custom.js";
 import "../src/assets/js/mail_send.js";
 import VueTyperPlugin from "vue-typer";
+import VueCarousel from "vue-carousel";
 
+Vue.use(VueCarousel);
 Vue.use(VueTyperPlugin);
 
 Vue.config.productionTip = false;

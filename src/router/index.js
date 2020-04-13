@@ -1,14 +1,18 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-// import Home from "../views/Home.vue";
-import HeroMo from "../components/HeroMo.vue";
-
+import Home from "../components/Home.vue";
+import Articles from "../views/articles/Articles";
 Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "HeroMo",
-    component: HeroMo
+    name: "Home",
+    component: Home
+  },
+  {
+    path: "/articles",
+    name: "Articles",
+    component: Articles
   }
 ];
 

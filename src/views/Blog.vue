@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Blog -->
-    <section id="blog" class="section gray-bg">
+    <section id="blog" class="section white-bg">
       <div class="container">
         <div class="row sm-m-25px-b m-35px-b">
           <div class="col-md-12">
@@ -26,7 +26,11 @@
                   <span class="date">02 Mar</span>
                   <span class="meta">Design</span>
                 </div>
-                <h5><a href="#">Make your Marketing website</a></h5>
+                <h5>
+                  <router-link to="/articles">
+                    <a href="#">Make your Marketing website</a>
+                  </router-link>
+                </h5>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 </p>
@@ -91,12 +95,9 @@
 </template>
 
 <script>
-// import AppHeader from "../components/AppHeader.vue";
 export default {
   name: "Blog",
-  components: {
-    // AppHeader
-  }
+  components: {}
 };
 </script>
 

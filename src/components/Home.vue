@@ -3,8 +3,9 @@
     <app-header />
     <!-- Main -->
     <main class="main-left">
-      <home />
+      <hero-mo />
       <about />
+      <skills />
       <services />
       <portfolio />
       <blog />
@@ -17,24 +18,26 @@
 
 <script>
 import AppHeader from "../components/AppHeader.vue";
-import Home from "../views/Home.vue";
+import HeroMo from "../views/HeroMo.vue";
 import About from "../views/About.vue";
+import Skills from "../views/Skills.vue";
 import Services from "../views/Services.vue";
 import Portfolio from "../views/Portfolio.vue";
 import Blog from "../views/Blog.vue";
 import Contact from "../views/Contact.vue";
 import AppFooter from "../components/AppFooter.vue";
 export default {
-  name: "HeroMo",
+  name: "Home",
   components: {
     AppHeader,
-    Home,
+    HeroMo,
     About,
+    Skills,
     Services,
     Portfolio,
     Blog,
     Contact,
-    AppFooter,
+    AppFooter
   }
 };
 </script>

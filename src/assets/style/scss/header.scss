@@ -182,7 +182,7 @@
 @include up-md {
 	.header-white {
 		padding: 0;
-		position: fixed;
+		position: sticky;
 		top: 0;
 		left: 0;
 		right: 0;
@@ -194,7 +194,7 @@
 			font-weight: 600;
 			font-size: 24px;
 			text-transform: uppercase;
-			color: $px-white;
+			color: $px-dark;
 			.fixed-header & {
 				color: $px-dark;
 			}

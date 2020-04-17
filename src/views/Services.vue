@@ -118,20 +118,8 @@
 </template>
 
 <script>
-// import AppHeader from "../components/AppHeader.vue";
-import json from "../json/MOCK_DATA.json";
 export default {
-  name: "Services",
-  data: function() {
-    return {
-      pageName: "Articles",
-      pageDesc: "This is First Work",
-      Articles: json
-    };
-  },
-  components: {
-    // AppHeader
-  }
+  name: "Services"
 };
 </script>
 

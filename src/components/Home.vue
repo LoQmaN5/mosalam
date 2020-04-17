@@ -42,4 +42,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scope></style>
+<style lang="scss" scope>
+html {
+  scroll-behavior: smooth;
+}
+</style>

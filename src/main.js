@@ -18,9 +18,23 @@ import "../src/assets/js/custom.js";
 import "../src/assets/js/mail_send.js";
 import VueTyperPlugin from "vue-typer";
 import VueCarousel from "vue-carousel";
+import VueScrollIndicator from "vue-scroll-indicator";
+import SocialSharing from "vue-social-sharing";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import axios from "axios";
+import BackToTop from "vue-backtotop";
+
+axios.defaults.baseURL = "";
 
 Vue.use(VueCarousel);
 Vue.use(VueTyperPlugin);
+Vue.use(VueScrollIndicator);
+Vue.use(SocialSharing);
+library.add(faUserSecret);
+Vue.use(BackToTop);
+Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 Vue.config.productionTip = false;
 

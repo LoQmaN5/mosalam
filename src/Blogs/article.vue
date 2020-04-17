@@ -1,8 +1,7 @@
 <template>
   <div>
+    <vue-scroll-indicator height="5px" color="#00f" background="#eee"></vue-scroll-indicator>
 
-    
-    <!-- <vue-scroll-indicator height="5px" color="#00f" background="#eee"></vue-scroll-indicator> -->
     <ul>
       <router-link to tag="li">
         <a style="color: #00d8ff;">#react</a>

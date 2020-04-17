@@ -1,7 +1,10 @@
 <template>
   <div>
-    <vue-scroll-indicator height="5px" color="#00f" background="#eee"></vue-scroll-indicator>
-
+    <vue-scroll-indicator
+      height="5px"
+      color="#00f"
+      background="#eee"
+    ></vue-scroll-indicator>
     <ul>
       <router-link to tag="li">
         <a style="color: #00d8ff;">#react</a>
@@ -57,7 +60,9 @@
                 <b-row class="mb-2">
                   <b-col>
                     <h1>1. Bit</h1>
-                    <img src="https://miro.medium.com/max/800/1*MKPAe_pxmfj-EIyzNxarGg.gif" />
+                    <img
+                      src="https://miro.medium.com/max/800/1*MKPAe_pxmfj-EIyzNxarGg.gif"
+                    />
                     <br />
                     <br />
                     <p>
@@ -93,7 +98,12 @@
     </b-container>
     <div class="sidebar1">
       <b-row class="mb-3 ml-2">
-        <b-avatar button :size="30" variant="dark" v-b-popover.hover.rightbottom="'Linkedin'">
+        <b-avatar
+          button
+          :size="30"
+          variant="dark"
+          v-b-popover.hover.rightbottom="'Linkedin'"
+        >
           <social-sharing url="https://vuejs.org/" inline-template>
             <network network="linkedin">
               <i class="fab fa-linkedin"></i>
@@ -104,7 +114,12 @@
     </div>
     <div class="sidebar2">
       <b-row class="mb-3 ml-2">
-        <b-avatar button :size="30" variant="primary" v-b-popover.hover.rightbottom="'facebook'">
+        <b-avatar
+          button
+          :size="30"
+          variant="primary"
+          v-b-popover.hover.rightbottom="'facebook'"
+        >
           <social-sharing :url="share_link" inline-template>
             <network network="facebook">
               <i class="fab fa-facebook"></i>
@@ -115,7 +130,12 @@
     </div>
     <div class="sidebar3">
       <b-row class="mb-3 ml-2">
-        <b-avatar button :size="30" variant="info" v-b-popover.hover.rightbottom="'twitter'">
+        <b-avatar
+          button
+          :size="30"
+          variant="info"
+          v-b-popover.hover.rightbottom="'twitter'"
+        >
           <social-sharing url="https://vuejs.org/" inline-template>
             <network network="twitter">
               <i class="fab fa-twitter"></i>
@@ -126,8 +146,16 @@
     </div>
     <div class="sidebar4">
       <b-row class="mb-3 ml-2">
-        <b-avatar button :size="30" variant="danger" v-b-popover.hover.rightbottom="'reddit'">
-          <social-sharing url="`localhost:8080/article${this.$route.path}`" inline-template>
+        <b-avatar
+          button
+          :size="30"
+          variant="danger"
+          v-b-popover.hover.rightbottom="'reddit'"
+        >
+          <social-sharing
+            url="`localhost:8080/article${this.$route.path}`"
+            inline-template
+          >
             <network network="reddit">
               <i class="fab fa-reddit"></i>
             </network>

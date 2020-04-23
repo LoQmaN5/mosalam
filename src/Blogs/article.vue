@@ -36,7 +36,19 @@
         <div class="blog-grid">
           <b-row class="text-justify pl-5 pr-5">
             <b-col class="text-left">
-              <h1>5 Tools for Faster Vue.js App Development</h1>
+              <h1>blog post</h1>
+              <b-row class="mb-2">
+                <img
+                  src="https://miro.medium.com/max/800/1*MKPAe_pxmfj-EIyzNxarGg.gif"
+                />
+                <v-card-subtitle class="pb-0">Number 10</v-card-subtitle>
+
+    <v-card-text class="text--primary">
+      <div>Whitehaven Beach</div>
+
+      <div>Whitsunday Island, Whitsunday Islands</div>
+    </v-card-text>
+              </b-row>
               <b-row class="text-left pl-3">
                 <h6>
                   Five tools to speed the development of your Vue.js
@@ -60,9 +72,7 @@
                 <b-row class="mb-2">
                   <b-col>
                     <h1>1. Bit</h1>
-                    <img
-                      src="https://miro.medium.com/max/800/1*MKPAe_pxmfj-EIyzNxarGg.gif"
-                    />
+
                     <br />
                     <br />
                     <p>

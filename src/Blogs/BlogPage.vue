@@ -1,159 +1,29 @@
 <template>
   <div>
     <b-col class="container">
-      <div class="col-8 offset-2">
+      <div v-for="post in posts" :key="post.id" class="col-8 offset-2">
         <div class="card">
           <div class="blog-grid">
             <div class="blog-grid-img">
-              <a href="#">
-                <img class="img" src="../assets/img/blog-2.jpg" title alt />
+              <a href="/homeblogs/:id/:slug">
+                <img class="img" :src="post.img" />
               </a>
             </div>
             <div class="blog-gird-info">
               <div class="b-meta">
-                <span class="date">02 Mar</span>
+                <span class="date">{{ post.date }}</span>
                 <span class="meta">Design</span>
               </div>
               <h5>
-                <router-link to="/articles">
-                  <a href="#">Make your Marketing website</a>
+                <router-link to="/homeblogs/:id/:slug">
+                  <a href="#">{{ post.title }}</a>
                 </router-link>
               </h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <p>{{ post.body }}</p>
               <div class="btn-grid">
-                <router-link to="/article">
+                <router-link to="/homeblogs/:id/:slug">
                   <a class="m-btn-link" href="#">Read More</a>
                 </router-link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-8 offset-2">
-        <div class="card">
-          <div class="blog-grid">
-            <div class="blog-grid-img">
-              <a href="#">
-                <img class="img" src="../assets/img/blog-2.jpg" title alt />
-              </a>
-            </div>
-            <div class="blog-gird-info">
-              <div class="b-meta">
-                <span class="date">02 Mar</span>
-                <span class="meta">Design</span>
-              </div>
-              <h5>
-                <router-link to="/articles">
-                  <a href="#">Make your Marketing website</a>
-                </router-link>
-              </h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              <div class="btn-grid">
-                <a class="m-btn-link" href="#">Read More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-8 offset-2">
-        <div class="card">
-          <div class="blog-grid">
-            <div class="blog-grid-img">
-              <a href="#">
-                <img class="img" src="../assets/img/blog-2.jpg" title alt />
-              </a>
-            </div>
-            <div class="blog-gird-info">
-              <div class="b-meta">
-                <span class="date">02 Mar</span>
-                <span class="meta">Design</span>
-              </div>
-              <h5>
-                <router-link to="/articles">
-                  <a href="#">Make your Marketing website</a>
-                </router-link>
-              </h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              <div class="btn-grid">
-                <a class="m-btn-link" href="#">Read More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-8 offset-2">
-        <div class="card">
-          <div class="blog-grid">
-            <div class="blog-grid-img">
-              <a href="#">
-                <img class="img" src="../assets/img/blog-1.jpg" title alt />
-              </a>
-            </div>
-            <div class="blog-gird-info">
-              <div class="b-meta">
-                <span class="date">02 Mar</span>
-                <span class="meta">Design</span>
-              </div>
-              <h5>
-                <router-link to="/articles">
-                  <a href="#">Make your Marketing website</a>
-                </router-link>
-              </h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              <div class="btn-grid">
-                <a class="m-btn-link" href="#">Read More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-8 offset-2">
-        <div class="card">
-          <div class="blog-grid">
-            <div class="blog-grid-img">
-              <a href="#">
-                <img class="img" src="../assets/img/blog-2.jpg" title alt />
-              </a>
-            </div>
-            <div class="blog-gird-info">
-              <div class="b-meta">
-                <span class="date">02 Mar</span>
-                <span class="meta">Design</span>
-              </div>
-              <h5>
-                <router-link to="/articles">
-                  <a href="#">Make your Marketing website</a>
-                </router-link>
-              </h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              <div class="btn-grid">
-                <a class="m-btn-link" href="#">Read More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-8 offset-2">
-        <div class="card">
-          <div class="blog-grid">
-            <div class="blog-grid-img">
-              <a href="#">
-                <img class="img" src="../assets/img/blog-3.jpg" title alt />
-              </a>
-            </div>
-            <div class="blog-gird-info">
-              <div class="b-meta">
-                <span class="date">02 Mar</span>
-                <span class="meta">Design</span>
-              </div>
-              <h5>
-                <router-link to="/articles">
-                  <a href="#">Make your Marketing website</a>
-                </router-link>
-              </h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              <div class="btn-grid">
-                <a class="m-btn-link" href="#">Read More</a>
               </div>
             </div>
           </div>
@@ -164,8 +34,35 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
-  name: "BlogPage"
+  name: "BlogPage",
+  data() {
+    return {
+      posts: []
+    };
+  },
+  created() {
+    axios
+      .get("https://mosalam1.firebaseio.com/posts.json")
+      .then(res => {
+        const data = res.data;
+        const posts = [];
+        for (let key in data) {
+          const post = data[key];
+          post.id = key;
+          posts.push(post);
+          this.posts = posts;
+          console.log(this.posts);
+        }
+
+        console.log(res.data);
+        posts;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
 };
 </script>
 

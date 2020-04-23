@@ -20,8 +20,13 @@
             </b-button>
           </router-link>
         </div>
+        <!-- Start col -->
         <div class="row">
-          <div class="col-lg-4 m-15px-tb animation">
+          <div
+            class="col-lg-4 m-15px-tb animation"
+            v-for="blog in blogs"
+            :key="blog.id"
+          >
             <div class="blog-grid">
               <div class="blog-grid-img">
                 <router-link to="/article">
@@ -32,7 +37,7 @@
               </div>
               <div class="blog-gird-info">
                 <div class="b-meta">
-                  <span class="date">02 Mar</span>
+                  <span class="date">{{ blog.date }}</span>
                   <span class="meta">Design</span>
                 </div>
                 <h5>
@@ -51,53 +56,7 @@
               </div>
             </div>
           </div>
-          <!-- col -->
-          <div class="col-lg-4 m-15px-tb animation">
-            <div class="blog-grid">
-              <div class="blog-grid-img">
-                <a href="#">
-                  <img src="../assets/img/blog-2.jpg" title="" alt="" />
-                </a>
-              </div>
-              <div class="blog-gird-info">
-                <div class="b-meta">
-                  <span class="date">02 Mar 2019</span>
-                  <span class="meta">Design</span>
-                </div>
-                <h5><a href="#">Make your Marketing website</a></h5>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </p>
-                <div class="btn-grid">
-                  <a class="m-btn-link" href="#">Read More</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- col -->
-          <div class="col-lg-4 m-15px-tb animation">
-            <div class="blog-grid">
-              <div class="blog-grid-img">
-                <a href="#">
-                  <img src="../assets/img/blog-3.jpg" title="" alt="" />
-                </a>
-              </div>
-              <div class="blog-gird-info">
-                <div class="b-meta">
-                  <span class="date">02 Mar 2019</span>
-                  <span class="meta">Design</span>
-                </div>
-                <h5><a href="#">Make your Marketing website</a></h5>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </p>
-                <div class="btn-grid">
-                  <a class="m-btn-link" href="#">Read More</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- col -->
+          <!-- End col -->
         </div>
       </div>
     </section>
@@ -106,9 +65,36 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "Blog",
-  components: {}
+  components: {},
+  data() {
+    return {
+      blogs: []
+    };
+  },
+  created() {
+    axios
+      .get("https://mosalam1.firebaseio.com/blogs.json")
+      .then(res => {
+        const data = res.data;
+        const blogs = [];
+        for (let key in data) {
+          const blog = data[key];
+          blog.id = key;
+          blogs.push(blog);
+          this.blogs = blogs;
+          console.log(this.blogs);
+        }
+
+        console.log(res.data);
+        blogs;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
 };
 </script>
 
@@ -121,11 +107,9 @@ export default {
 
 .animation {
   transition: all 0.5s ease-in-out;
-  opacity: 0.5;
 }
 
 .animation:hover {
   transform: scale(1.1);
-  opacity: 1;
 }
 </style>

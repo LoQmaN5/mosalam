@@ -6,26 +6,26 @@ import Article from "../Blogs/article";
 Vue.use(VueRouter);
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home,
+    path: "/",
+    name: "Home",
+    component: Home
   },
   {
-    path: '/homeblogs',
-    name: 'HomeBlogs',
-    component: HomeBlogs,
+    path: "/homeblogs",
+    name: "HomeBlogs",
+    component: HomeBlogs
   },
   {
-    path: '/homeblogs/:id/:slug',
-    name: 'Article',
-    component: Article,
-  },
+    path: "/homeblogs/:id/:slug",
+    name: "Article",
+    component: Article
+  }
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes,
+  routes
   // scrollBehavior() {
   //   return { x: 0, y: 0 };
   // }

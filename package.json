@@ -15,6 +15,7 @@
     "axios": "^0.19.2",
     "bootstrap-vue": "^2.10.1",
     "core-js": "^3.6.4",
+    "firebase": "^7.14.1",
     "isotope-layout": "^3.0.6",
     "jquery": "^3.5.0",
     "jquery-migrate": "3.0.0",

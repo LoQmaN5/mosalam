@@ -165,7 +165,7 @@
                 <b-col>
                   <h1>
                     <strong>
-                      <span style="color: #f00">Final Step: </span>
+                      <span style="color: #f00">Final Step:</span>
                       Fusce mattis non nisi quis tincidunt. Donec dictum velit
                       sed feugiat laoreet.
                     </strong>
@@ -222,7 +222,7 @@
     >
       <div class="media">
         <div class="img">
-          <img src="../assets/img/mo1.jpg" title="" alt="" />
+          <img src="../assets/img/mo1.jpg" title alt />
         </div>
         <div class="media-body p-25px-l">
           <p>
@@ -231,56 +231,60 @@
             ad minim veniam.
           </p>
           <div class="tc-info">
-            <h6 class="font-alt dark-color font-w-600">
-              Mo Salam
-            </h6>
+            <h6 class="font-alt dark-color font-w-600">Mo Salam</h6>
             <span>Co-founder</span>
           </div>
         </div>
       </div>
     </div>
-    <b-row class="mb-3 text-justify dark-color offset-1">
+    <b-row class="mb-3 text-justify dark-color offset-1 container">
       <b-col>
         <h1>RELATED POSTS</h1>
+        <div class="row">
+          <div
+            class="col-lg-4 m-15px-tb animation"
+            v-for="blog in blogs"
+            :key="blog.id"
+          >
+            <div class="blog-grid">
+              <div class="blog-grid-img">
+                <router-link to="/article">
+                  <a href="#">
+                    <img src="../assets/img/blog-1.jpg" title alt />
+                  </a>
+                </router-link>
+              </div>
+              <div class="blog-gird-info">
+                <div class="b-meta">
+                  <span class="date">{{ blog.date }}</span>
+                  <span class="meta">Design</span>
+                </div>
+                <h5>
+                  <router-link to="/article">
+                    <a href="#">Make your Marketing website</a>
+                  </router-link>
+                </h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <div class="btn-grid">
+                  <router-link to="/article">
+                    <a class="m-btn-link" href="#">Read More</a>
+                  </router-link>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End col -->
+        </div>
       </b-col>
-      <b-card-group deck class="container">
-        <b-card
-          title="Title"
-          img-src="https://picsum.photos/300/300/?image=41"
-          img-alt="Image"
-          img-top
-        >
-          <b-card-text>
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
-          </b-card-text>
-        </b-card>
-
-        <b-card
-          title="Title"
-          img-src="https://picsum.photos/300/300/?image=41"
-          img-alt="Image"
-          img-top
-        >
-          <b-card-text>
-            This card has supporting text below as a natural lead-in to
-            additional content.
-          </b-card-text>
-        </b-card>
-
-        <b-card
-          title="Title"
-          img-src="https://picsum.photos/300/300/?image=41"
-          img-alt="Image"
-          img-top
-        >
-          <b-card-text>
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This card has even longer content than the
-            first to show that equal height action.
-          </b-card-text>
-        </b-card>
-      </b-card-group>
+    </b-row>
+    <b-row class="mb-3 text-justify container offset-1 bg-light">
+      <b-col>
+        <b-form-textarea
+          id="textarea-rows"
+          placeholder="comment"
+          rows="8"
+        ></b-form-textarea>
+      </b-col>
     </b-row>
     <div class="sidebar1">
       <b-row class="mb-3 ml-2">
@@ -360,7 +364,7 @@
 
 <script>
 import AppFooter from "../components/AppFooter.vue";
-// import func from "../../vue-temp/vue-editor-bridge";
+import axios from "axios";
 export default {
   name: "articles",
   data: function() {
@@ -370,7 +374,8 @@ export default {
       twitter: "https://twitter.com",
       instagram: "https://www.instagram.com/m7.salam",
       linkedin: "https://www.linkedin.com/in/m7salam",
-      github: "https://github.com/m7salam"
+      github: "https://github.com/m7salam",
+      blogs: []
     };
   },
   components: {
@@ -378,6 +383,25 @@ export default {
   },
   created() {
     console.log(this.share_link);
+    axios
+      .get("https://mosalam1.firebaseio.com/blogs.json")
+      .then(res => {
+        const data = res.data;
+        const blogs = [];
+        for (let key in data) {
+          const blog = data[key];
+          blog.id = key;
+          blogs.push(blog);
+          this.blogs = blogs;
+          console.log(this.blogs);
+        }
+
+        console.log(res.data);
+        blogs;
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 };
 </script>
@@ -449,6 +473,14 @@ cite {
   font-size: 14px;
   font-weight: 600;
   margin-top: 5px;
+}
+
+.animation {
+  transition: all 0.5s ease-in-out;
+}
+
+.animation:hover {
+  transform: scale(1.1);
 }
 
 .sidebar1 {

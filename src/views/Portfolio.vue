@@ -387,7 +387,7 @@
         <div class="row justify-content-center">
           <div class="col-md-12 col-lg-12">
             <!-- testimonials -->
-            <carousel
+            <b-carousel
               class="owl-carousel"
               data-items="2"
               data-nav-dots="true"
@@ -445,7 +445,7 @@
                   </div>
                 </div>
               </slide>
-            </carousel>
+            </b-carousel>
             <!-- / -->
             <!-- testimonials -->
             <carousel>

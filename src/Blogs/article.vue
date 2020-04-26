@@ -5,32 +5,7 @@
       color="#00f"
       background="#eee"
     ></vue-scroll-indicator>
-    <ul>
-      <router-link to tag="li">
-        <a style="color: #00d8ff;">#react</a>
-      </router-link>
-      <router-link to tag="li">
-        <a style="color: #49d091">#vue</a>
-      </router-link>
-      <router-link to tag="li">
-        <a style="color: #e03237">#angular</a>
-      </router-link>
-      <router-link to tag="li">
-        <a style="color: #ffe725">#javascript</a>
-      </router-link>
-      <router-link to tag="li">
-        <a style="color: #33a956">#node</a>
-      </router-link>
-      <router-link to tag="li">
-        <a style="color: #ff8682">#laravel</a>
-      </router-link>
-      <router-link to tag="li">
-        <a style="color: #2ca9e1">#css</a>
-      </router-link>
-      <router-link to tag="li">
-        <a style="color: #fdd22d">#python</a>
-      </router-link>
-    </ul>
+    <blog-header />
     <b-container class="bg-color p-2">
       <div class="col">
         <div class="blog-grid">
@@ -212,71 +187,74 @@
                   </p>
                 </b-col>
               </b-row>
+              <div
+                class="testimonial-col-01 col-8 p-4 text-justify bg-light rounded-lg"
+              >
+                <div class="media">
+                  <div class="img">
+                    <img src="../assets/img/mo1.jpg" title alt />
+                  </div>
+                  <div class="media-body p-25px-l">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam.
+                    </p>
+                    <div class="tc-info">
+                      <h6 class="font-alt dark-color font-w-600">Mo Salam</h6>
+                      <span>Co-founder</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <b-row class="mb-3 text-justify dark-color">
+                <b-col>
+                  <h1>RELATED POSTS</h1>
+                  <div class="row">
+                    <div
+                      class="col-lg-4 m-15px-tb animation"
+                      v-for="blog in blogs"
+                      :key="blog.id"
+                    >
+                      <div class="blog-grid">
+                        <div class="blog-grid-img">
+                          <router-link to="/article">
+                            <a href="#">
+                              <img src="../assets/img/blog-1.jpg" title alt />
+                            </a>
+                          </router-link>
+                        </div>
+                        <div class="blog-gird-info">
+                          <div class="b-meta">
+                            <span class="date">{{ blog.date }}</span>
+                            <span class="meta">Design</span>
+                          </div>
+                          <h5>
+                            <router-link to="/article">
+                              <a href="#">Make your Marketing website</a>
+                            </router-link>
+                          </h5>
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit.
+                          </p>
+                          <div class="btn-grid">
+                            <router-link to="/article">
+                              <a class="m-btn-link" href="#">Read More</a>
+                            </router-link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End col -->
+                  </div>
+                </b-col>
+              </b-row>
             </b-col>
           </b-row>
         </div>
       </div>
     </b-container>
-    <div
-      class="testimonial-col-01 col-7 p-4 text-justify offset-2 bg-light rounded-lg"
-    >
-      <div class="media">
-        <div class="img">
-          <img src="../assets/img/mo1.jpg" title alt />
-        </div>
-        <div class="media-body p-25px-l">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.
-          </p>
-          <div class="tc-info">
-            <h6 class="font-alt dark-color font-w-600">Mo Salam</h6>
-            <span>Co-founder</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <b-row class="mb-3 text-justify dark-color offset-1 container">
-      <b-col>
-        <h1>RELATED POSTS</h1>
-        <div class="row">
-          <div
-            class="col-lg-4 m-15px-tb animation"
-            v-for="blog in blogs"
-            :key="blog.id"
-          >
-            <div class="blog-grid">
-              <div class="blog-grid-img">
-                <router-link to="/article">
-                  <a href="#">
-                    <img src="../assets/img/blog-1.jpg" title alt />
-                  </a>
-                </router-link>
-              </div>
-              <div class="blog-gird-info">
-                <div class="b-meta">
-                  <span class="date">{{ blog.date }}</span>
-                  <span class="meta">Design</span>
-                </div>
-                <h5>
-                  <router-link to="/article">
-                    <a href="#">Make your Marketing website</a>
-                  </router-link>
-                </h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                <div class="btn-grid">
-                  <router-link to="/article">
-                    <a class="m-btn-link" href="#">Read More</a>
-                  </router-link>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End col -->
-        </div>
-      </b-col>
-    </b-row>
     <b-row class="mb-3 text-justify container offset-1 bg-light">
       <b-col>
         <b-form-textarea
@@ -364,6 +342,7 @@
 
 <script>
 import AppFooter from "../components/AppFooter.vue";
+import BlogHeader from "../Blogs/BlogHeader.vue";
 import axios from "axios";
 export default {
   name: "articles",
@@ -379,7 +358,8 @@ export default {
     };
   },
   components: {
-    AppFooter
+    AppFooter,
+    BlogHeader
   },
   created() {
     console.log(this.share_link);
@@ -486,28 +466,28 @@ cite {
 .sidebar1 {
   position: fixed;
   left: 25px;
-  top: 100px;
+  top: 125px;
   transition: all 0.5s ease-in-out;
   opacity: 0.5;
 }
 .sidebar2 {
   position: fixed;
   left: 25px;
-  top: 150px;
+  top: 175px;
   transition: all 0.5s ease-in-out;
   opacity: 0.5;
 }
 .sidebar3 {
   position: fixed;
   left: 25px;
-  top: 200px;
+  top: 225px;
   transition: all 0.5s ease-in-out;
   opacity: 0.5;
 }
 .sidebar4 {
   position: fixed;
   left: 25px;
-  top: 250px;
+  top: 275px;
   transition: all 0.5s ease-in-out;
   opacity: 0.5;
 }

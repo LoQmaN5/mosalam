@@ -1,15 +1,18 @@
 <template>
-  <div id="app">
+  <v-app>
     <transition name="slide" mode="out-in">
       <router-view />
     </transition>
-  </div>
+  </v-app>
 </template>
 
 <script>
 export default {
   name: "App",
-  components: {}
+  components: {},
+  data: () => ({
+    //
+  })
 };
 </script>
 

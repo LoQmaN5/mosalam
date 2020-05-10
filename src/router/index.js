@@ -1,9 +1,13 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../components/Home.vue";
-import HomeBlogs from "../Blogs/HomeBlogs";
-import Article from "../Blogs/article";
+import Home from "../views/Home.vue";
+import BlogHome from "../views/Blog/BlogHome.vue";
+import BlogList from "../views/Blog/BlogList.vue";
+import Article from "../views/Blog/article";
+import NotFound from "../views/NotFound.vue";
+
 Vue.use(VueRouter);
+
 const routes = [
   {
     path: "/",
@@ -11,24 +15,32 @@ const routes = [
     component: Home
   },
   {
-    path: "/homeblogs",
-    name: "HomeBlogs",
-    component: HomeBlogs
+    path: "/bloghome",
+    name: "BlogHome",
+    component: BlogHome
   },
   {
-    path: "/homeblogs/:id/:slug",
+    path: "/bloglist",
+    name: "BlogList",
+    component: BlogList
+  },
+  {
+    path: "/article/:id/:slug",
     name: "Article",
     component: Article
+  },
+  {
+    path: "*",
+    name: "NotFound",
+    component: NotFound
   }
+  //TODO:Component for notfound
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes
-  // scrollBehavior() {
-  //   return { x: 0, y: 0 };
-  // }
 });
 
 export default router;

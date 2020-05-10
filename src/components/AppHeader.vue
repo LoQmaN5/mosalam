@@ -5,13 +5,13 @@
       <div class="load-circle">
         <span class="one"></span>
       </div>
-    </div>-->
+    </div> -->
     <!-- end page loading -->
     <!-- Mobile Toggle -->
     <div class="mob-header">
       <div class="d-flex">
         <div class="navbar-brand">
-          <a class="logo-text" href="index.html">Tony</a>
+          <a class="logo-text" href="index.html">Mo Salam</a>
         </div>
         <button class="toggler-menu">
           <span></span>
@@ -85,4 +85,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+ul {
+  padding-left: 0 !important;
+}
+</style>

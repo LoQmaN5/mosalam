@@ -6,21 +6,21 @@
         <div class="row align-items-center">
           <div class="col-md-6 m-10px-tb">
             <div class="nav justify-content-center justify-content-md-start">
-              <a :href="facebook" target="_blank"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a :href="twitter" target="_blank"
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a :href="instagram" target="_blank"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a :href="linkedin" target="_blank"
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
-              <a :href="github" target="_blank"
-                ><i class="fab fa-github"></i
-              ></a>
+              <a :href="facebook" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a :href="twitter" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a :href="instagram" target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a :href="linkedin" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a :href="github" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
             </div>
           </div>
           <div class="col-md-6 m-10px-tb text-center text-md-right">
@@ -48,4 +48,9 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped></style>
+<style lang="scss" scoped>
+.footer {
+  padding: 0;
+  background: #111;
+}
+</style>
